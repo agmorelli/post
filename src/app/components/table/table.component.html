@@ -1,0 +1,34 @@
+
+  <br>
+
+
+<div class="row justify-content-center">
+    <button mat-raised-button color="primary" (click)="openFormModal()">Nuevo post</button>
+</div>
+  <br>
+  <br>
+
+  <div class="row">
+    <table class="table">
+        <thead class=" table-primary">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Cuerpo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of postList | paginate: { itemsPerPage: 10, currentPage: cPage }; let i = index" class="list-group-item-action pointer" (click)="openCommentsModal(post.id)">
+            <th scope="row">{{post.id}}</th>
+            <td> {{post.title}} </td>
+            <td> {{post.body}} </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pagination-controls (pageChange)="cPage = $event"></pagination-controls>
+  </div>
+
+
+
+

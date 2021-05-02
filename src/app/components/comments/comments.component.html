@@ -1,0 +1,28 @@
+
+<div class="modal-header">
+    <h6 class="modal-title ">Comentarios</h6>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+
+<div class="modal-body">
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let comment of comments">
+            <label>{{comment.email}}</label>
+            <br>
+            <h6>
+                {{comment.name}}
+            </h6>
+            <p>
+                {{comment.body}}
+            </p>
+        </li>
+      </ul>
+    
+</div>
+
+
+
